@@ -3,22 +3,22 @@ module "ec2_instance" {
 
   name = "single-instance"
 
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   monitoring             = false
-  vpc_security_group_ids = ["sg-06f76a53f08a418d4"]
-  subnet_id              = "subnet-0bfb6070cab586136"
+  vpc_security_group_ids = ["sg-0664cac88daa6a26b"]
+  subnet_id              = "subnet-042560e37bc8225a7"
 
   tags = {
     Terraform   = "true"
     Environment = "dev"
-    Name        = "Teste pipeline"
+    Name        = "Teste pipeline v1"
   }
 }
 
 terraform {
   backend "s3" {
-    bucket = "teste-repo-fullcycle"
-    key    = "teste"
-    region = "sa-east-1"
+    bucket = "bkt-rogerferro "
+    key    = "minha-chave-aws"
+    region = "us-east-1"
   }
 }
